@@ -67,7 +67,6 @@ class _ProgressIndicatorsState extends State<ProgressIndicators> {
                   ],
                 ),
               SizedBox(height: 20,),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -77,7 +76,6 @@ class _ProgressIndicatorsState extends State<ProgressIndicators> {
                 ],
               ),
               SizedBox(height: 20,),
-//=======================================================
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -105,6 +103,34 @@ class _ProgressIndicatorsState extends State<ProgressIndicators> {
                 ],
               ),
               SizedBox(height: 20,),
+              SpinKitFadingCircle(
+                itemBuilder: (_, int index) {
+                  return DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: index.isEven ? Colors.teal : Colors.deepPurple,
+                    ),
+                  );
+                },
+                size: 120.0,
+              ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SpinKitHourGlass(color: Colors.black),
+                  SpinKitPouringHourglass(color: Colors.black),
+                ],
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SpinKitFadingGrid(color: Colors.deepOrange),
+                  SpinKitFadingGrid(color: Colors.green, shape: BoxShape.rectangle),
+                  SpinKitSquareCircle(color: Colors.brown),
+                ],
+              ),
+
             ],
           ),
         ),
