@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:untitled4/testing_file.dart';
 void main() {
   runApp(MyApp());
 }
@@ -9,6 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Freshchat Flutter Demo',
+
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -31,6 +33,14 @@ class _ProgressIndicatorsState extends State<ProgressIndicators> {
       appBar: AppBar(
         title: Text('Day 16: progress'),
         backgroundColor: Colors.brown,
+        flexibleSpace: GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return CircularPercent();
+            }));
+          },
+            child: Icon(Icons.next_plan, color: Colors.white,),
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -130,7 +140,11 @@ class _ProgressIndicatorsState extends State<ProgressIndicators> {
                   SpinKitSquareCircle(color: Colors.brown),
                 ],
               ),
-
+TextButton(onPressed: (){
+  Navigator.push(context, MaterialPageRoute(builder: (context){
+    return CircularPercent();
+  }));
+}, child: Text('Next'))
             ],
           ),
         ),
